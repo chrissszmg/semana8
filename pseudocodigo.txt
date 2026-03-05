@@ -1,0 +1,58 @@
+Primero se debe ingresar la cantidad de personas que formarán parte del grupo y se les preguntara su fecha de cumpleaños.
+
+Segundo, se compara la fecha de cumpleaños (día y mes) del grup de personas.
+
+Tercero, realizar la pregunta para determinar si cumplen años el mismo día.
+
+Si la respuesta es “sí”, el programa muestra cuáles son las personas que coinciden en la misma fecha y finaliza.
+
+Si la respuesta es “no”, el programa compara las fechas para identificar cuáles son las más cercanas.
+Luego ordena las fechas de manera cronológica por día y mes.
+Después calcula la diferencia entre ellas e identifica cuáles tienen la menor diferencia.
+Finalmente, muestra las personas cuyos cumpleaños son los más cercanos.
+
+PSEUDOCODIGO
+INICIO
+
+  LEER cantidad_personas_grupo
+
+PARA i ← 1 HASTA cantidad_personas_grupo HACER
+    LEER dia[i]
+    LEER mes[i]
+FIN PARA
+
+coincidencia ← FALSO
+
+PARA i ← 1 HASTA cantidad_personas_grupo - 1 HACER
+    PARA j ← i + 1 HASTA cantidad_personas_grupo HACER
+
+        SI dia[i] = dia[j] Y mes[i] = mes[j] ENTONCES
+            ESCRIBIR "Dos personas cumplen el mismo día"
+            coincidencia ← VERDADERO
+        FIN SI
+
+    FIN PARA
+FIN PARA
+
+
+SI coincidencia = FALSO ENTONCES
+
+    ORDENAR fechas por mes y día
+
+    menor_diferencia ← 999
+
+    PARA i ← 1 HASTA cantidad_personas_grupo - 1 HACER
+
+        diferencia ← diferencia entre fecha[i] y fecha[i+1]
+
+        SI diferencia < menor_diferencia ENTONCES
+            menor_diferencia ← diferencia
+        FIN SI
+
+    FIN PARA
+
+    ESCRIBIR "Los cumpleaños más cercanos fueron encontrados"
+
+FIN SI
+
+FIN
